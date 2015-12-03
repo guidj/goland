@@ -1,8 +1,8 @@
 package main
 
 import (
-"fmt"
-"math/cmplx"
+	"fmt"
+	"math/cmplx"
 )
 
 var (

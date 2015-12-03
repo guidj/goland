@@ -16,13 +16,13 @@ func fibonacci() func() int {
 	i := 0
 	a, b := 0, 1
 
-	return func() int{
+	return func() int {
 
 		r := 0
 
 		if i == 0 {
 			r = a
-		}else {
+		} else {
 			r = a + b
 
 			temp := b
