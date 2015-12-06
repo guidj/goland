@@ -1,11 +1,12 @@
 package main
 
 import (
-	"encoding/json"
+//	"encoding/json"
 	"fmt"
-	"io"
-	"log"
-	"strings"
+//	"io"
+//	"log"
+//	"strings"
+	"./oracle"
 )
 
 const jsonStream = `
@@ -22,15 +23,24 @@ type Person struct {
 
 type Info map[string]Person
 
+func Hello(fn func() string) {
+	fmt.Println("Hello " + fn())
+}
+
+
 func main() {
-	dec := json.NewDecoder(strings.NewReader(jsonStream))
-	for {
-		var info Info
-		if err := dec.Decode(&info); err == io.EOF {
-			break
-		} else if err != nil {
-			log.Fatal(err)
-		}
-		fmt.Printf("%s: %d\n", info["bvu62fu6dq"].Name, info["bvu62fu6dq"].Age)
-	}
+
+//	dec := json.NewDecoder(strings.NewReader(jsonStream))
+//	for {
+//		var info Info
+//		if err := dec.Decode(&info); err == io.EOF {
+//			break
+//		} else if err != nil {
+//			log.Fatal(err)
+//		}
+//		fmt.Printf("%s: %d\n", info["bvu62fu6dq"].Name, info["bvu62fu6dq"].Age)
+//	}
+
+	Hello(oracle.Colombia)
+	Hello(oracle.DotGo)
 }
